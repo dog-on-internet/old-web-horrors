@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gsdpkg.com — Webring</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="titlebar">The gsdpkg Webring</div>
+
+    <nav class="webnav">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="creative.html">Creative Works</a>
+      <a href="links.html">Cool Links</a>
+      <a href="webring.html">Webring</a>
+      <a href="private/login.html">Members Area</a>
+    </nav>
+
+    <h2>🔗 You Are Part Of The Ring 🔗</h2>
+
+    <p>This site is a proud member of a webring. Click below to visit the next site in the ring... if you dare.</p>
+
+    <p>
+      <a class="webring-btn" href="#" id="prev-link">&laquo; Previous Site</a>
+      &nbsp;
+      <a class="webring-btn" href="#" id="next-link">Next Site &raquo;</a>
+    </p>
+
+    <hr class="retro">
+
+    <p><small>Ring navigation works most of the time.</small></p>
+
+    <footer>
+      &copy; 1998-2026 gsdpkg.com.
+    </footer>
+  </div>
+
+  <script src="js/snow.js"></script>
+  <script>
+    // The joke: roughly half the time, "ring navigation" sends you to
+    // a mock 404 instead of actually going anywhere.
+    function ringNav(e) {
+      e.preventDefault();
+      if (Math.random() < 0.5) {
+        window.location.href = 'fake-404.html';
+      } else {
+        // "successfully" navigate... back to the same page, because
+        // there's nothing else in the ring yet.
+        window.location.href = 'webring.html';
+      }
+    }
+    document.getElementById('prev-link').addEventListener('click', ringNav);
+    document.getElementById('next-link').addEventListener('click', ringNav);
+  </script>
+</body>
+</html>
